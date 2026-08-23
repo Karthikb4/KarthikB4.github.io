@@ -1,0 +1,386 @@
+/* ==========================================================================
+   CS6.302 SSD Course Portal Stylesheet
+   Design: Modern Slate & Emerald Tech Theme
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --canvas-bg: #0f172a;
+  --surface-card: #ffffff;
+  --text-main: #334155;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --accent-teal: #0d9488;
+  --accent-emerald: #059669;
+  --border-color: #e2e8f0;
+  --radius-card: 14px;
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06);
+}
+
+/* --- Global Layout & Reset --- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background-color: #f1f5f9 !important;
+  color: var(--text-main) !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  padding: 2.5rem 2rem !important;
+  max-width: 1440px !important;
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+
+/* Base Table Overrides */
+table {
+  width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: none !important;
+  background: transparent;
+  margin-bottom: 2rem;
+}
+
+hr {
+  display: none !important;
+}
+
+/* Hide standalone spacer tables */
+table:not(.tg):not([border="1"]):not(:first-of-type):not(:last-of-type):not(:has(#staff)) {
+  display: none !important;
+}
+
+/* ==========================================================================
+   1. Header Hero Banner
+   ========================================================================== */
+
+body > table:first-of-type > tbody > tr:first-child > td {
+  display: block;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: var(--radius-card);
+  padding: 3.5rem 3rem !important;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.2);
+  border: 1px solid #334155 !important;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+body > table:first-of-type > tbody > tr:first-child > td::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+h1#home {
+  font-size: 2.6rem !important;
+  font-weight: 700 !important;
+  color: #f8fafc !important;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem !important;
+}
+
+h3 {
+  font-size: 1.1rem !important;
+  font-weight: 400 !important;
+  color: #94a3b8 !important;
+  margin: 0.25rem 0 !important;
+}
+
+/* ==========================================================================
+   2. Sticky Navigation Bar
+   ========================================================================== */
+
+body > table:first-of-type > tbody > tr:nth-child(2) > td {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  padding: 0.85rem 1.5rem !important;
+  position: sticky;
+  top: 1rem;
+  z-index: 1000;
+  margin-bottom: 2.5rem;
+}
+
+body > table:first-of-type > tbody > tr:nth-child(2) > td a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark) !important;
+  background: #f8fafc;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+body > table:first-of-type > tbody > tr:nth-child(2) > td a:hover {
+  background: var(--accent-teal);
+  color: #ffffff !important;
+  border-color: var(--accent-teal);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. Content Cards (About, Policies, Staff)
+   ========================================================================== */
+
+body > table:first-of-type > tbody > tr:nth-child(n+3) > td,
+body > table:has(#staff) {
+  display: block !important;
+  background: var(--surface-card) !important;
+  border-radius: var(--radius-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--card-shadow) !important;
+  margin-bottom: 2rem !important;
+  padding: 2.5rem 3rem !important;
+  transition: border-color 0.2s ease;
+}
+
+body > table:has(#staff) td {
+  padding: 0.4rem 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+body > table:first-of-type > tbody > tr:nth-child(n+3) > td:hover,
+body > table:has(#staff):hover {
+  border-color: #cbd5e1 !important;
+}
+
+/* Headings with Vertical Accent Line */
+b[id] {
+  display: inline;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--canvas-bg);
+  letter-spacing: -0.01em;
+  scroll-margin-top: 6.5rem;
+  margin-right: 6px;
+}
+
+b[id]::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 1.1em;
+  background: linear-gradient(180deg, var(--accent-teal), var(--accent-emerald));
+  border-radius: 4px;
+  margin-right: 10px;
+  vertical-align: -0.12em;
+}
+
+td > p {
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin: 1.2rem 0;
+}
+
+li {
+  margin-bottom: 0.85rem;
+  color: var(--text-main);
+}
+
+li b {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. Schedules, Exams & Grading Tables
+   ========================================================================== */
+
+table.tg,
+table[border="1"] {
+  display: table !important;
+  width: 100% !important;
+  background-color: var(--surface-card) !important;
+  border-radius: var(--radius-card) !important;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color) !important;
+  margin: 2rem 0 !important;
+}
+
+table.tg tr,
+table[border="1"] tr {
+  display: table-row !important;
+}
+
+table.tg th,
+table[border="1"] th {
+  display: table-cell !important;
+  background-color: var(--canvas-bg) !important;
+  color: #f8fafc !important;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600 !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1.1rem 1.4rem !important;
+  border: none !important;
+  text-align: center !important;
+}
+
+table.tg td,
+table[border="1"] td {
+  display: table-cell !important;
+  padding: 1rem 1.4rem !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  font-size: 0.92rem;
+  color: var(--text-main);
+  background-color: var(--surface-card) !important;
+}
+
+table.tg tbody tr:nth-child(even) td,
+table[border="1"] tbody tr:nth-child(even) td,
+table[border="1"] tr:nth-child(even) td {
+  background-color: #f8fafc !important;
+}
+
+table.tg tbody tr:hover td,
+table[border="1"] tbody tr:hover td,
+table[border="1"] tr:hover td {
+  background-color: #f0fdfa !important;
+}
+
+td[colspan] {
+  background-color: #f1f5f9 !important;
+  border-bottom: 2px solid var(--border-color) !important;
+}
+
+td[colspan] p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--canvas-bg);
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+/* ==========================================================================
+   5. Action Buttons & Links
+   ========================================================================== */
+
+a {
+  color: var(--accent-teal);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-emerald);
+  text-decoration: underline;
+}
+
+/* Unified [go to top] button */
+a[href="#home"] {
+  font-family: 'JetBrains Mono', monospace;
+  display: inline-block;
+  background-color: #f8fafc;
+  color: var(--text-dark) !important;
+  padding: 0.25rem 0.65rem;
+  margin-left: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  border: 1px solid #cbd5e1;
+  vertical-align: middle;
+  transition: all 0.15s ease;
+}
+
+a[href="#home"]:hover {
+  background-color: var(--accent-teal);
+  color: #ffffff !important;
+  border-color: var(--accent-teal);
+  transform: translateY(-1px);
+}
+
+/* Table action pills for [Slides], [Notes], [Scripts] */
+table.tg tbody a,
+table[border="1"] tbody a {
+  font-family: 'JetBrains Mono', monospace;
+  display: inline-block;
+  background-color: #f8fafc;
+  color: var(--text-dark) !important;
+  padding: 0.3rem 0.8rem;
+  margin: 0.2rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  border: 1px solid #cbd5e1;
+  transition: all 0.15s ease;
+}
+
+table.tg tbody a:hover,
+table[border="1"] tbody a:hover {
+  background-color: var(--accent-teal);
+  color: #ffffff !important;
+  border-color: var(--accent-teal);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   6. Live Clock & Footer
+   ========================================================================== */
+
+#txt {
+  font-family: 'JetBrains Mono', monospace;
+  display: inline-block;
+  background-color: var(--canvas-bg);
+  color: #2dd4bf;
+  padding: 0.55rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 1.2rem 0;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body > table:last-of-type {
+  text-align: center;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin-top: 3.5rem;
+}
+
+body > table:last-of-type td {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}

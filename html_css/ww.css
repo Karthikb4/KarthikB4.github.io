@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --canvas-bg: #0f172a;
+  --canvas-subtle: #1e293b;
+  --surface-card: #ffffff;
+  --text-headline: #0f172a;
+  --text-body: #334155;
+  --text-subtle: #64748b;
+  --accent-teal: #0d9488;
+  --accent-teal-light: #ccfbf1;
+  --accent-emerald: #059669;
+  --border-soft: #e2e8f0;
+  --shadow-float: 0 12px 30px -10px rgba(15, 23, 42, 0.08);
+  --radius-custom: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background-color: #f1f5f9 !important;
+  color: var(--text-body) !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  padding: 2.5rem 2rem !important;
+  max-width: 1440px !important;
+  width: 95% !important;
+  margin: 0 auto !important;
+}
+
+table {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: none !important;
+  background: transparent;
+  margin-bottom: 2rem;
+}
+
+hr {
+  display: none !important;
+}
+
+/* Hide ONLY pure divider spacer tables (skips #staff) */
+table:not(.tg):not([border="1"]):not(:first-of-type):not(:last-of-type):not(:has(#staff)) {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Header Banner */
+body > table:first-of-type > tbody > tr:first-child > td {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: var(--radius-custom);
+  padding: 3.5rem 3rem !important;
+  text-align: center;
+  color: #ffffff !important;
+  box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.2);
+  display: block;
+  margin-bottom: 1.5rem;
+  border: 1px solid #334155 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+body > table:first-of-type > tbody > tr:first-child > td::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+h1#home {
+  font-size: 2.6rem !important;
+  font-weight: 700 !important;
+  color: #f8fafc !important;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem !important;
+}
+
+h3 {
+  font-size: 1.1rem !important;
+  font-weight: 400 !important;
+  color: #94a3b8 !important;
+  margin: 0.2rem 0 !important;
+  letter-spacing: 0.02em;
+}
+
+/* Navigation Bar */
+body > table:first-of-type > tbody > tr:nth-child(2) > td {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid var(--border-soft) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  padding: 0.85rem 1.5rem !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  position: sticky;
+  top: 1rem;
+  z-index: 1000;
+  margin-bottom: 2.5rem;
+}
+
+body > table:first-of-type > tbody > tr:nth-child(2) > td a {
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: var(--text-headline) !important;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body > table:first-of-type > tbody > tr:nth-child(2) > td a:hover {
+  background: var(--accent-teal);
+  color: #ffffff !important;
+  border-color: var(--accent-teal);
+  transform: translateY(-2px);
+}
+
+/* Content Cards & Staff Card */
+body > table:first-of-type > tbody > tr:nth-child(n+3) > td,
+body > table:has(#staff) {
+  display: block !important;
+  background: var(--surface-card) !important;
+  border-radius: var(--radius-custom) !important;
+  border: 1px solid var(--border-soft) !important;
+  box-shadow: var(--shadow-float) !important;
+  margin-bottom: 2rem !important;
+  padding: 2.5rem 3rem !important;
+  transition: border-color 0.2s ease;
+}
+
+body > table:has(#staff) td {
+  padding: 0.5rem 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+body > table:first-of-type > tbody > tr:nth-child(n+3) > td:hover,
+body > table:has(#staff):hover {
+  border-color: #cbd5e1 !important;
+}
+
+/* Section Headings */
+b[id] {
+  display: inline;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--canvas-bg);
+  letter-spacing: -0.01em;
+  scroll-margin-top: 6.5rem;
+  margin-right: 6px;
+}
+
+b[id]::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 1.1em;
+  background: linear-gradient(180deg, var(--accent-teal), var(--accent-emerald));
+  border-radius: 4px;
+  margin-right: 10px;
+  vertical-align: -0.12em;
+}
+
+td > p {
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin: 1.2rem 0;
+}
+
+li {
+  margin-bottom: 0.85rem;
+  color: var(--text-body);
+}
+
+li b {
+  color: var(--text-headline);
+  font-weight: 600;
+}
+
+/* Tables */
+table.tg,
+table[border="1"] {
+  background-color: var(--surface-card) !important;
+  border-radius: var(--radius-custom) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-float);
+  border: 1px solid var(--border-soft) !important;
+  margin: 2rem 0 !important;
+  display: table !important;
+  width: 100% !important;
+}
+
+table.tg tr,
+table[border="1"] tr {
+  display: table-row !important;
+}
+
+table.tg th,
+table[border="1"] th {
+  display: table-cell !important;
+  background-color: var(--canvas-bg) !important;
+  color: #f8fafc !important;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600 !important;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1.1rem 1.4rem !important;
+  border: none !important;
+  text-align: center !important;
+}
+
+table.tg td,
+table[border="1"] td {
+  display: table-cell !important;
+  padding: 1rem 1.4rem !important;
+  border-bottom: 1px solid var(--border-soft) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  font-size: 0.92rem;
+  color: var(--text-body);
+  background-color: var(--surface-card) !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+table.tg tbody tr:nth-child(even) td,
+table[border="1"] tbody tr:nth-child(even) td,
+table[border="1"] tr:nth-child(even) td {
+  background-color: #f8fafc !important;
+}
+
+table.tg tbody tr:hover td,
+table[border="1"] tbody tr:hover td,
+table[border="1"] tr:hover td {
+  background-color: #f0fdfa !important;
+}
+
+td[colspan] {
+  background-color: #f1f5f9 !important;
+  border-bottom: 2px solid var(--border-soft) !important;
+}
+
+td[colspan] p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--canvas-bg);
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+/* Action Badges */
+a {
+  color: var(--accent-teal);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-emerald);
+  text-decoration: underline;
+}
+a[href="#home"] {
+  font-family: 'JetBrains Mono', monospace;
+  display: inline-block;
+  background-color: #f8fafc;
+  color: var(--text-headline) !important;
+  padding: 0.25rem 0.65rem;
+  margin-left: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  border: 1px solid #cbd5e1;
+  vertical-align: middle;
+  transition: all 0.15s ease;
+}
+
+a[href="#home"]:hover {
+  background-color: var(--accent-teal);
+  color: #ffffff !important;
+  border-color: var(--accent-teal);
+  transform: translateY(-1px);
+}
+
+table.tg tbody a,
+table[border="1"] tbody a {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #f8fafc;
+  color: var(--text-headline) !important;
+  padding: 0.3rem 0.8rem;
+  margin: 0.2rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  border: 1px solid #cbd5e1;
+  transition: all 0.15s ease;
+}
+
+table.tg tbody a:hover,
+table[border="1"] tbody a:hover {
+  background-color: var(--accent-teal);
+  color: #ffffff !important;
+  border-color: var(--accent-teal);
+  transform: translateY(-1px);
+}
+
+/* Footer & Clock */
+#txt {
+  font-family: 'JetBrains Mono', monospace;
+  display: inline-block;
+  background-color: var(--canvas-bg);
+  color: #2dd4bf;
+  padding: 0.55rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 1.2rem 0;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+body > table:last-of-type {
+  text-align: center;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin-top: 3.5rem;
+}
+
+body > table:last-of-type td {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--text-subtle);
+  font-size: 0.85rem;
+}
