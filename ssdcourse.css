@@ -384,3 +384,69 @@ body > table:last-of-type td {
   color: var(--text-muted);
   font-size: 0.85rem;
 }
+
+/* ==========================================================================
+   Dark Mode Overrides (Add at the very end of ssdcourse.css)
+   ========================================================================== */
+
+/* 1. Global Background & Text */
+body.dark-active {
+  background-color: #0b0f19 !important;
+  color: #cbd5e1 !important;
+}
+
+/* 2. Navigation Bar Row */
+body.dark-active > table:first-of-type > tbody > tr:nth-child(2) > td {
+  background: rgba(30, 41, 59, 0.95) !important;
+  border-color: #334155 !important;
+}
+
+body.dark-active > table:first-of-type > tbody > tr:nth-child(2) > td a {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+body.dark-active > table:first-of-type > tbody > tr:nth-child(2) > td a:hover {
+  background: #0d9488 !important;
+  color: #ffffff !important;
+}
+
+/* 3. Containers (About, Lecture/Lab Hours, Course Policy, Staff) */
+body.dark-active > table:first-of-type > tbody > tr:nth-child(n+3) > td,
+body.dark-active table:has(#staff),
+body.dark-active table[border="0"] td {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #334155 !important;
+}
+
+body.dark-active b[id],
+body.dark-active td p b,
+body.dark-active li b {
+  color: #38bdf8 !important;
+}
+
+body.dark-active li {
+  color: #cbd5e1 !important;
+}
+
+/* 4. Table Elements & Hover Fix */
+body.dark-active table.tg,
+body.dark-active table[border="1"] {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+body.dark-active table.tg td,
+body.dark-active table[border="1"] td {
+  background-color: #1e293b !important;
+  color: #cbd5e1 !important;
+  border-bottom: 1px solid #334155 !important;
+}
+
+body.dark-active table.tg tbody tr:hover td,
+body.dark-active table[border="1"] tbody tr:hover td {
+  background-color: #2d3748 !important;
+  color: #ffffff !important;
+}
