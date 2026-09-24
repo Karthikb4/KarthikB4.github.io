@@ -1,8 +1,3 @@
-/* ==========================================================================
-   Question 50: Dynamic JS Features
-   1. Clean Dark Mode Toggle (with instant override)
-   2. Live Highlight & Match-Counter Search Feature
-   ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
     // --------------------------------------------------------------------------
